@@ -1,0 +1,31 @@
+namespace Levels
+{
+    //Класс первого уровня
+    public class ParentAntenna
+    {
+        private double diameter;
+        private string material;
+        private double cost;
+
+        public ParentAntenna(double diameter, string material, double cost)
+        {
+            this.diameter = diameter;
+            this.material = material;
+            this.cost = cost;
+        }
+        //Виртуальный метод для перегрузки в наследнике
+        public virtual double Quality()
+        {
+            return diameter / cost;
+        }
+        //Так же виртуальный метод для вывода информации
+        public virtual string GetInfo()
+        {
+            string info;
+            info = "Диаметр: " + diameter + '\n';
+            info += "Материал: " + material + '\n';
+            info += "Стоимость: " + cost + '\n';
+            return info;
+        }
+    }
+}
